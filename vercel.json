@@ -5,14 +5,14 @@
       "src": "angular-frontend/package.json",
       "use": "@vercel/angular",
       "config": {
-        "distDir": "angular/dist/angular-frontend"
+        "distDir": "angular/dist/**"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "angular-frontend/dist/angular-frontend/index.html"
+      "dest": "/index.html"
     }
   ]
 }
