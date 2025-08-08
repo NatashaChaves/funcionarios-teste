@@ -1,14 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "angular-frontend/package.json",
-      "use": "@vercel/angular",
-      "config": {
-        "distDir": "angular/dist/**"
-      }
-    }
-  ],
+  "buildCommand": "npm run build --prefix angular-frontend",
+  "outputDirectory": "angular-frontend/dist/funcionarios-admin",
   "routes": [
     {
       "src": "/(.*)",
