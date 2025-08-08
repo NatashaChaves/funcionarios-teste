@@ -1,0 +1,8 @@
+[
+  { "id": 1, "nome": "Alice", "email": "alice@email.com", "dataContratacao": "2025-08-05", "cpf": "496.493.870-05", "ativo": "1" },
+  { "id": 2, "nome": "Bob", "email": "bob@email.com", "dataContratacao": "2025-08-05", "cpf": "201.037.830-08" ,"ativo": "0"},
+  { "id": 3, "nome": "Carlos", "email": "carlos@email.com", "dataContratacao": "2025-08-05", "cpf": "751.311.430-71", "ativo": "1" },
+  { "id": 4, "nome": "Daniela", "email": "daniela@email.com", "dataContratacao": "2025-08-05", "cpf": "658.036.470-04", "ativo": "1" },
+  { "id": 5, "nome": "Eduardo", "email": "eduardo@email.com", "dataContratacao": "2025-08-05", "cpf": "124.785.850-22", "ativo": "1" },
+  { "id": 6, "nome": "Fernanda", "email": "fernanda@email.com", "dataContratacao": "2025-08-05", "cpf": "978.952.500-19","ativo": "1" }
+]

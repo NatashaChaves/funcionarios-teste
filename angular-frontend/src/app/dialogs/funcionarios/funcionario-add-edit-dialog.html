@@ -1,0 +1,105 @@
+<h2 mat-dialog-title>{{ data ? 'Editar Funcionário' : 'Adicionar Funcionário' }}</h2>
+
+<mat-horizontal-stepper linear>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" class="step-form">
+      <ng-template matStepLabel>Dados Pessoais</ng-template>
+      <div class="step-content">
+        <div class="foto-container">
+          <img [src]="fotoPreview || 'no-photo.png'" alt="Foto" class="foto-preview" />
+
+          <input type="file" accept="image/*" (change)="onFotoSelecionada($event)" />
+        </div>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" />
+          <mat-error *ngIf="firstFormGroup.controls['nome'].invalid">Nome obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="firstFormGroup.controls['email'].invalid">Email obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Data de contratação</mat-label>
+          <input matInput formControlName="dataContratacao" [matDatepicker]="picker">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="firstFormGroup.controls['dataContratacao'].invalid">Data de contratação
+            obrigatória</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="cpf" mask="000.000.000-00" placeholder="000.000.000-00" autocomplete="off" />
+          <mat-error *ngIf="firstFormGroup.controls['cpf'].hasError('cpfInvalido')">CPF inválido</mat-error>
+          <mat-error *ngIf="firstFormGroup.controls['cpf'].invalid">CPF obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Ativo</mat-label>
+          <select matNativeControl formControlName="ativo">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+          <mat-error *ngIf="firstFormGroup.controls['ativo'].invalid">Ativo obrigatório</mat-error>
+          </mat-form-field>
+
+          <div class="step-footer">
+            <button mat-button matStepperNext [disabled]="firstFormGroup.invalid">Próximo</button>
+          </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup" class="step-form">
+      <ng-template matStepLabel>Endereço</ng-template>
+
+      <div class="step-content">
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>CEP</mat-label>
+          <input matInput formControlName="cep" placeholder="00000-000" mask="00000-000" maxlength="9" />
+          <button mat-icon-button matSuffix type="button" (click)="buscarCep()"
+            [disabled]="secondFormGroup.get('cep')?.invalid" aria-label="Buscar endereço">
+            <mat-icon>search</mat-icon>
+          </button>
+          <mat-error *ngIf="secondFormGroup.controls['cep'].invalid">CEP obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Rua</mat-label>
+          <input matInput formControlName="rua" />
+          <mat-error *ngIf="secondFormGroup.controls['rua'].invalid">Rua obrigatória</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro" />
+          <mat-error *ngIf="secondFormGroup.controls['bairro'].invalid">Bairro obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="cidade" />
+          <mat-error *ngIf="secondFormGroup.controls['cidade'].invalid">Cidade obrigatória</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="estado" />
+          <mat-error *ngIf="secondFormGroup.controls['estado'].invalid">Estado obrigatório</mat-error>
+        </mat-form-field>
+
+        <div class="step-footer">
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button (click)="onSalvar()" [disabled]="secondFormGroup.invalid">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

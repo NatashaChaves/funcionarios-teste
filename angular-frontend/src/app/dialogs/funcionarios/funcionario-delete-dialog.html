@@ -1,0 +1,11 @@
+<mat-dialog-content class="icon-centered-dialog">
+    <div class="content-center">
+        <mat-icon class="exclude-icon">warning</mat-icon>
+        Deseja realmente excluir {{Nome}}?
+        <div mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancelar</button>
+            <button mat-button color="warn" (click)="onDelete()">Excluir</button>
+        </div>
+
+    </div>
+</mat-dialog-content>

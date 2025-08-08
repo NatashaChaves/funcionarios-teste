@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+mat-horizontal-stepper {
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.step-buttons button {
+  min-width: 100px;
+}
+
+h2[mat-dialog-title] {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  :host {
+    padding: 16px;
+  }
+
+  .step-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+}
+
+.foto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  margin-bottom: 16px;
+}
+
+.foto-preview {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+
+.step-content-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.step-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 10px;
+  max-height: 80vh;
+  margin-bottom: 0;
+}
+
+.step-footer {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  z-index: 10;
+}
+
+.exclude-icon {
+  color: red;
+  font-size: 24px;
+
+}
+
+.icon-centered-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  padding: 0;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}

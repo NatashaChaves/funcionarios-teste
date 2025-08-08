@@ -1,0 +1,38 @@
+
+.card-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.table-responsive {
+  overflow-x: auto; 
+}
+
+table {
+  width: 100%;
+  min-width: 600px; 
+}
+.header {
+  display: flex;
+  align-items: center;      
+  justify-content: space-between; 
+  margin-bottom: 16px;       
+}
+.ativo-chip-sim {
+  background-color: #c8e6c9 !important; 
+  color: #256029 !important;           
+  font-weight: bold;
+}
+
+.ativo-chip-nao {
+  background-color: #ffcdd2 !important; 
+  color: #b71c1c !important;           
+  font-weight: bold;
+}
+.header-logout {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px; 
+}
