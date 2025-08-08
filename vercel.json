@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build --prefix angular-frontend",
-  "outputDirectory": "angular-frontend/dist",
+  "outputDirectory": "angular-frontend/dist/angular-frontend",
   "routes": [
     { "src": "/(.*)", "dest": "/index.html" }
   ]
