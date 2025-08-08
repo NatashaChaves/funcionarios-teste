@@ -1,5 +1,6 @@
 export const environment = {
-  production: false,
+   production: true,
+  apiUrl: 'https://node-backend-c889abf9b35c.herokuapp.com/api',
   firebase: {
     apiKey: "AIzaSyAma_7c4HQhfhrHAGze5BKafPQSKnsBrC8",
     authDomain: "funcionarios-c87c2.firebaseapp.com",
