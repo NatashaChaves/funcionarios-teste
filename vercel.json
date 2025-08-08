@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "angular/package.json",
-      "use": "@vercel/static-build",
+      "src": "angular-frontend/package.json",
+      "use": "@vercel/angular",
       "config": {
         "distDir": "angular/dist/angular-frontend"
       }
@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "angular-frontend/dist/angular-frontend/index.html"
     }
   ]
 }
